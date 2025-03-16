@@ -1,0 +1,20 @@
+parser_v1.py
+
+Страница парсинга: https://zakupki.gov.ru/epz/order/extendedsearch/results.html?fz44=on&pageNumber=3
+Данный не были получены (Ошибка 404). Перезагружаю страницу...
+Не удалось получить данные при повторном запуске (Ошибка 404). Перехожу к следующей ссылке...
+https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0322200024525000012 | xml для 1 записи: None
+https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0322200024525000011 | xml для 2 записи: 2025-03-10T15:08:44.689+10:00
+Данный не были получены (Ошибка 404). Перезагружаю страницу...
+https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0322300001725000251 | xml для 3 записи: 2025-03-10T15:55:00.134+10:00
+https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0322200001225000319 | xml для 4 записи: 2025-03-10T15:27:06.621+10:00
+https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0323300050525000010 | xml для 5 записи: 2025-03-10T11:03:50.947+09:00
+https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0816300013225000007 | xml для 6 записи: 2025-02-27T17:40:54.242+09:00
+https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0320200021825000019 | xml для 7 записи: 2025-03-10T15:21:15.165+10:00
+Данный не были получены (Ошибка 404). Перезагружаю страницу...
+https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0322200021125000003 | xml для 8 записи: 2025-03-10T14:07:10.449+10:00
+https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0322200030825000010 | xml для 9 записи: 2025-03-10T10:14:15.913+10:00
+https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0322200013525000013 | xml для 10 записи: 2025-03-10T09:04:24.172+10:00
+______________________________________________________________________
+
+Process finished with exit code 0
