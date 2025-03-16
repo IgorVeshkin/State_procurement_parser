@@ -1,0 +1,47 @@
+> python
+
+>>> from celery_v1 import get_url
+>>> task1 = get_url.delay(links_number=4)
+>>> task1.status
+'FAILURE'
+>>> task1 = get_url.delay(links_number=4)
+>>> task1.status                            
+'PENDING'
+>>> task1.status
+'SUCCESS'
+>>> task1.get() 
+['https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0179100004725000012', 'https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0351300133525000017', 'https://zakupki.gov.ru/epz/order/n
+otice/printForm/viewXml.html?regNumber=0351300133525000016', 'https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0318300537925000091', 'https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumb
+er=0332200017525000004', 'https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0345500001225000036', 'https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0372200280825000003', 'https://za
+kupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0848600081325000097', 'https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0368300038825000011', 'https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0319200000525000038']
+
+
+>>> from celery_v1 import parse_xml_url
+>>> task2 = parse_xml_url.delay('https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0179100004725000012', wait=5) 
+>>> task2.status
+'PENDING'
+>>> task2.status
+'SUCCESS'
+>>> task2.get() 
+'<ns7:epNotificationEF2020 xmlns:ns7="http://zakupki.gov.ru/oos/printform/1" xmlns="http://zakupki.gov.ru/oos/EPtypes/1" xmlns:ns2="http://zakupki.gov.ru/oos/base/1" xmlns:ns3="http://zakupki.gov.ru/oos/common/1" xmlns:ns4="http
+://zakupki.gov.ru/oos/types/1" xmlns:ns5="http://zakupki.gov.ru/oos/KOTypes/1" xmlns:ns6="http://zakupki.gov.ru/oos/CPtypes/1" schemeVersion="15.0">\n<id>38819250</id>\n<versionNumber>2</versionNumber>\n<commonInfo>\n<purchaseNu
+mber>0179100004725000012</purchaseNumber>\n<docNumber>№ИИ1</docNumber>\n<directDT>2025-03-14T14:50:40.511+03:00</directDT>\n<plannedPublishDate>2025-03-15+03:00</plannedPublishDate>\n<publishDTInEIS>2025-03-15T19:20:20.945+03:00
+</publishDTInEIS>\n<href>https://zakupki.gov.ru/epz/order/notice/ea20/view/common-info.html?regNumber=0179100004725000012</href>\n<notPublishedOnEIS>true</notPublishedOnEIS>\n<placingWay>\n<ns2:code>EAP20</ns2:code>\n<ns2:name>Э
+лектронный аукцион</ns2:name>\n...</placingWay>\n<ETP>\n<ns2:code>ETP_SBAST</ns2:code>\n<ns2:name>АО «Сбербанк-АСТ»</ns2:name>\...
+
+
+>>> from celery_v1 import *
+>>> task1 = parse_xml_url.delay('https://zakupki.gov.ru/epz/order/notice/printForm/viewXml.html?regNumber=0338100004625000003', wait=4)
+>>> task1.status
+'PENDING'
+>>> task1.status
+'PENDING'
+>>> task1.status
+'SUCCESS'
+>>> task1.get()
+'<ns7:epNotificationEF2020 xmlns:ns7="http://zakupki.gov.ru/oos/printform/1" xmlns="http://zakupki.gov.ru/oos/EPtypes/1" xmlns:ns2="http://zakupki.gov.ru/oos/base/1" xmlns:ns3="http://zakupki.gov.ru/oos/common/1" xmlns:ns4="http
+://zakupki.gov.ru/oos/types/1" xmlns:ns5="http://zakupki.gov.ru/oos/KOTypes/1" xmlns:ns6="http://zakupki.gov.ru/oos/CPtypes/1" schemeVersion="15.0">\n<id>38734379</id>\n<versionNumber>4</versionNumber>\n<commonInfo>\n<purchaseNu
+mber>0338100004625000003</purchaseNumber>\n<docNumber>№ИИ3</docNumber>\n<directDT>2025-03-03T16:54:10.369+12:00</directDT>\n<plannedPublishDate>2025-03-10+12:00</plannedPublishDate>\n<publishDTInEIS>2025-03-10T13:40:31.661+12:00
+</publishDTInEIS>\n<href>https://zakupki.gov.ru/epz/order/notice/ea20/view/common-info.html?regNumber=0338100004625000003</href>...
+
+
